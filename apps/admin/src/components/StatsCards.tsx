@@ -1,44 +1,75 @@
 'use client';
 
-import React from 'react';
-import { DollarSign, ShoppingBag, Package, AlertTriangle, TrendingUp, ArrowUpRight } from 'lucide-react';
-
-const stats = [
-  {
-    title: 'Toplam Satış Hacmi',
-    value: '₺48.520,70',
-    change: '+18.4% geçen aya göre',
-    icon: DollarSign,
-    color: 'from-emerald-500 to-teal-600',
-    bgColor: 'bg-emerald-50 text-emerald-600 border-emerald-100',
-  },
-  {
-    title: 'Bekleyen Siparişler',
-    value: '12 Sipariş',
-    change: '4 yeni sipariş onay bekliyor',
-    icon: ShoppingBag,
-    color: 'from-amber-500 to-orange-600',
-    bgColor: 'bg-amber-50 text-amber-600 border-amber-100',
-  },
-  {
-    title: 'Aktif Ürün Sayısı',
-    value: '22 Çeşit',
-    change: '8 Kategori altında',
-    icon: Package,
-    color: 'from-[#9C3A50] to-[#7A2B3C]',
-    bgColor: 'bg-[#FFF0F2] text-[#9C3A50] border-[#FFD9DE]',
-  },
-  {
-    title: 'Kritik Stok Uyarısı',
-    value: '3 Ürün',
-    change: 'Minimum seviyenin altında',
-    icon: AlertTriangle,
-    color: 'from-rose-500 to-red-600',
-    bgColor: 'bg-rose-50 text-rose-600 border-rose-100',
-  },
-];
+import React, { useState, useEffect } from 'react';
+import { DollarSign, ShoppingBag, Package, AlertTriangle, TrendingUp } from 'lucide-react';
 
 export const StatsCards: React.FC = () => {
+  const [totalSales, setTotalSales] = useState(0);
+  const [pendingOrdersCount, setPendingOrdersCount] = useState(0);
+  const [activeProductsCount, setActiveProductsCount] = useState(0);
+  const [criticalStockCount, setCriticalStockCount] = useState(0);
+
+  useEffect(() => {
+    try {
+      const savedOrders = localStorage.getItem('wakko_orders');
+      if (savedOrders) {
+        const orders = JSON.parse(savedOrders);
+        if (Array.isArray(orders)) {
+          const sales = orders
+            .filter((o) => o.status === 'DELIVERED' || o.status === 'PROCESSING' || o.status === 'SHIPPED')
+            .reduce((sum, o) => sum + (Number(o.total) || 0), 0);
+          setTotalSales(sales);
+
+          const pending = orders.filter((o) => o.status === 'PENDING').length;
+          setPendingOrdersCount(pending);
+        }
+      }
+
+      const savedProducts = localStorage.getItem('wakko_admin_products');
+      if (savedProducts) {
+        const products = JSON.parse(savedProducts);
+        if (Array.isArray(products)) {
+          setActiveProductsCount(products.length);
+          const critical = products.filter((p) => Number(p.stock) <= 5).length;
+          setCriticalStockCount(critical);
+        }
+      }
+    } catch (e) {
+      // ignore
+    }
+  }, []);
+
+  const stats = [
+    {
+      title: 'Toplam Satış Hacmi',
+      value: `₺${totalSales.toLocaleString('tr-TR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`,
+      change: totalSales > 0 ? 'Gerçekleşen siparişler' : 'Henüz satış gerçekleşmedi',
+      icon: DollarSign,
+      bgColor: 'bg-emerald-50 text-emerald-600 border-emerald-100',
+    },
+    {
+      title: 'Bekleyen Siparişler',
+      value: `${pendingOrdersCount} Sipariş`,
+      change: pendingOrdersCount > 0 ? `${pendingOrdersCount} sipariş onay bekliyor` : 'Onay bekleyen sipariş yok',
+      icon: ShoppingBag,
+      bgColor: 'bg-amber-50 text-amber-600 border-amber-100',
+    },
+    {
+      title: 'Aktif Ürün Sayısı',
+      value: `${activeProductsCount} Çeşit`,
+      change: activeProductsCount > 0 ? 'Mağazada yayında' : 'Henüz ürün eklenmedi',
+      icon: Package,
+      bgColor: 'bg-[#FFF0F2] text-[#9C3A50] border-[#FFD9DE]',
+    },
+    {
+      title: 'Kritik Stok Uyarısı',
+      value: `${criticalStockCount} Ürün`,
+      change: criticalStockCount > 0 ? 'Minimum seviyenin altında' : 'Tüm stoklar güvenli',
+      icon: AlertTriangle,
+      bgColor: 'bg-rose-50 text-rose-600 border-rose-100',
+    },
+  ];
+
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
       {stats.map((item, idx) => {

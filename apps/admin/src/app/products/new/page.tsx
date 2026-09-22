@@ -34,10 +34,10 @@ export default function AdminNewProductPage(): React.JSX.Element {
   const [price, setPrice] = useState('');
   const [discountPrice, setDiscountPrice] = useState('');
   const [costPrice, setCostPrice] = useState('');
-  const [stock, setStock] = useState('100');
+  const [stock, setStock] = useState('10');
   const [status, setStatus] = useState<'ACTIVE' | 'DRAFT'>('ACTIVE');
   const [description, setDescription] = useState('');
-  const [imageUrl, setImageUrl] = useState('https://images.unsplash.com/photo-1535141192574-5d4897c13136?w=600');
+  const [imageUrl, setImageUrl] = useState('');
   const [material, setMaterial] = useState('Gold Aynalı Pleksi');
 
   const processFile = (file: File) => {
@@ -94,10 +94,33 @@ export default function AdminNewProductPage(): React.JSX.Element {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    if (!name.trim()) return;
+
+    const newProd = {
+      id: `prod-${Date.now()}`,
+      name: name.trim(),
+      sku: sku.trim(),
+      category,
+      price: parseFloat(price) || 0,
+      discountPrice: discountPrice ? parseFloat(discountPrice) : undefined,
+      stock: parseInt(stock, 10) || 0,
+      status: (parseInt(stock, 10) <= 5 ? 'LOW_STOCK' : 'ACTIVE') as 'ACTIVE' | 'LOW_STOCK' | 'OUT_OF_STOCK',
+      image: imageUrl || 'https://images.unsplash.com/photo-1535141192574-5d4897c13136?w=400',
+    };
+
+    try {
+      const existing = localStorage.getItem('wakko_admin_products');
+      const list = existing ? JSON.parse(existing) : [];
+      list.unshift(newProd);
+      localStorage.setItem('wakko_admin_products', JSON.stringify(list));
+    } catch (err) {
+      // ignore
+    }
+
     setNotification(`"${name || 'Yeni Ürün'}" başarıyla oluşturuldu ve yayınlandı!`);
     setTimeout(() => {
       router.push('/products');
-    }, 1500);
+    }, 1200);
   };
 
   return (

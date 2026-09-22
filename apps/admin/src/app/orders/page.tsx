@@ -31,80 +31,32 @@ interface OrderItem {
   status: 'PENDING' | 'PROCESSING' | 'SHIPPED' | 'DELIVERED';
 }
 
-const initialOrders: OrderItem[] = [
-  {
-    id: 'ord-1',
-    orderNumber: 'WAKKO-2026-00001',
-    customerName: 'Ayşe Yılmaz',
-    email: 'ayse@example.com',
-    phone: '0532 111 22 33',
-    date: '24 Ağu 2026',
-    itemsCount: 3,
-    total: 184.70,
-    paymentMethod: 'Kapıda Ödeme',
-    status: 'DELIVERED',
-  },
-  {
-    id: 'ord-2',
-    orderNumber: 'WAKKO-2026-00002',
-    customerName: 'Mehmet Demir',
-    email: 'mehmet@example.com',
-    phone: '0544 222 33 44',
-    date: '24 Ağu 2026',
-    itemsCount: 1,
-    total: 219.00,
-    paymentMethod: 'Kapıda Ödeme',
-    status: 'PROCESSING',
-  },
-  {
-    id: 'ord-3',
-    orderNumber: 'WAKKO-2026-00003',
-    customerName: 'Zeynep Kaya',
-    email: 'zeynep@example.com',
-    phone: '0555 333 44 55',
-    date: '23 Ağu 2026',
-    itemsCount: 4,
-    total: 345.50,
-    paymentMethod: 'Kredi Kartı',
-    status: 'SHIPPED',
-  },
-  {
-    id: 'ord-4',
-    orderNumber: 'WAKKO-2026-00004',
-    customerName: 'Can Öztürk',
-    email: 'can@example.com',
-    phone: '0533 444 55 66',
-    date: '23 Ağu 2026',
-    itemsCount: 2,
-    total: 119.90,
-    paymentMethod: 'Kapıda Ödeme',
-    status: 'PENDING',
-  },
-  {
-    id: 'ord-5',
-    orderNumber: 'WAKKO-2026-00005',
-    customerName: 'Merve Arslan',
-    email: 'merve@example.com',
-    phone: '0535 666 77 88',
-    date: '22 Ağu 2026',
-    itemsCount: 5,
-    total: 490.00,
-    paymentMethod: 'Kredi Kartı',
-    status: 'DELIVERED',
-  },
-];
-
 export default function AdminOrdersPage(): React.JSX.Element {
-  const [orders, setOrders] = useState<OrderItem[]>(initialOrders);
+  const [orders, setOrders] = useState<OrderItem[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [statusFilter, setStatusFilter] = useState('ALL');
 
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 4;
+  const itemsPerPage = 6;
 
   const [isManualModalOpen, setIsManualModalOpen] = useState(false);
   const [notification, setNotification] = useState<string | null>(null);
+
+  // Load orders from localStorage
+  React.useEffect(() => {
+    try {
+      const saved = localStorage.getItem('wakko_orders');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed)) {
+          setOrders(parsed);
+        }
+      }
+    } catch (e) {
+      // ignore
+    }
+  }, []);
 
   const showNotification = (msg: string) => {
     setNotification(msg);
@@ -135,7 +87,14 @@ export default function AdminOrdersPage(): React.JSX.Element {
       status: 'PENDING',
     };
 
-    setOrders([newOrder, ...orders]);
+    const updated = [newOrder, ...orders];
+    setOrders(updated);
+    try {
+      localStorage.setItem('wakko_orders', JSON.stringify(updated));
+    } catch (err) {
+      // ignore
+    }
+
     showNotification(`Manuel Sipariş ${newOrder.orderNumber} başarıyla oluşturuldu!`);
     setIsManualModalOpen(false);
 
@@ -146,9 +105,13 @@ export default function AdminOrdersPage(): React.JSX.Element {
   };
 
   const handleStatusChange = (id: string, newStatus: OrderItem['status']) => {
-    setOrders(
-      orders.map((o) => (o.id === id ? { ...o, status: newStatus } : o))
-    );
+    const updated = orders.map((o) => (o.id === id ? { ...o, status: newStatus } : o));
+    setOrders(updated);
+    try {
+      localStorage.setItem('wakko_orders', JSON.stringify(updated));
+    } catch (err) {
+      // ignore
+    }
     showNotification('Sipariş durumu güncellendi.');
   };
 
@@ -288,7 +251,20 @@ export default function AdminOrdersPage(): React.JSX.Element {
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
-              {paginatedOrders.map((order) => (
+              {paginatedOrders.length === 0 ? (
+                <tr>
+                  <td colSpan={7} className="py-16 text-center">
+                    <div className="w-14 h-14 rounded-2xl bg-slate-100 text-[#9C3A50] mx-auto flex items-center justify-center mb-3">
+                      <ShoppingCart className="w-7 h-7" />
+                    </div>
+                    <p className="text-sm font-bold text-slate-800">Henüz Kayıtlı Sipariş Yok</p>
+                    <p className="text-xs text-slate-400 mt-1 max-w-sm mx-auto">
+                      Veritabanında henüz sipariş kaydı bulunmuyor. Müşteriler mağazadan sipariş verdikçe veya sağ üstten manuel sipariş eklediğinizde burada listelenecektir.
+                    </p>
+                  </td>
+                </tr>
+              ) : (
+                paginatedOrders.map((order) => (
                 <tr key={order.id} className="hover:bg-slate-50/80 transition">
                   <td className="py-3.5 px-4 font-extrabold text-slate-900">
                     <Link href={`/orders/${order.id}`} className="hover:text-[#9C3A50]">
@@ -330,7 +306,8 @@ export default function AdminOrdersPage(): React.JSX.Element {
                     </div>
                   </td>
                 </tr>
-              ))}
+              ))
+            )}
             </tbody>
           </table>
         </div>

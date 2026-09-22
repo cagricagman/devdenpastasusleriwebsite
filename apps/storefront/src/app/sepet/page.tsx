@@ -14,31 +14,14 @@ interface CartItem {
   imageUrl: string;
 }
 
-const INITIAL_CART: CartItem[] = [
-  {
-    id: '6d7c735b-89fc-43e1-9b1e-a9c5c95d6e83',
-    name: 'Gold Pleksi "Happy Birthday" Pasta Süsü',
-    category: 'Pasta Süsleri',
-    price: 39.9,
-    quantity: 1,
-    imageUrl: 'https://images.unsplash.com/photo-1535141192574-5d4897c13136?w=200',
-  },
-  {
-    id: 'e713600f-8700-4780-994c-e87f5869e5d4',
-    name: 'Rose Gold "İyi Ki Doğdun" Pasta Topper',
-    category: 'Pasta Süsleri',
-    price: 44.9,
-    quantity: 1,
-    imageUrl: 'https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=200',
-  },
-];
+const INITIAL_CART: CartItem[] = [];
 
 export default function CartPage(): React.JSX.Element {
   const router = useRouter();
   const [cart, setCart] = useState<CartItem[]>(INITIAL_CART);
-  const [couponCode, setCouponCode] = useState('WAKKO10');
-  const [appliedDiscount, setAppliedDiscount] = useState(10.0);
-  const [couponMessage, setCouponMessage] = useState('WAKKO10 indirim kuponu uygulandı (-₺10.00)');
+  const [couponCode, setCouponCode] = useState('');
+  const [appliedDiscount, setAppliedDiscount] = useState(0);
+  const [couponMessage, setCouponMessage] = useState('');
   const [isLoaded, setIsLoaded] = useState(false);
 
   // Load from localStorage if present

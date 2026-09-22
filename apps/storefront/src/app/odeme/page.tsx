@@ -34,24 +34,7 @@ interface CartItem {
 export default function CheckoutPage(): React.JSX.Element {
   const router = useRouter();
 
-  const [cart, setCart] = useState<CartItem[]>([
-    {
-      id: '6d7c735b-89fc-43e1-9b1e-a9c5c95d6e83',
-      name: 'Gold Pleksi "Happy Birthday" Pasta Süsü',
-      category: 'Pasta Süsleri',
-      price: 39.9,
-      quantity: 1,
-      imageUrl: 'https://images.unsplash.com/photo-1535141192574-5d4897c13136?w=200',
-    },
-    {
-      id: 'e713600f-8700-4780-994c-e87f5869e5d4',
-      name: 'Rose Gold "İyi Ki Doğdun" Pasta Topper',
-      category: 'Pasta Süsleri',
-      price: 44.9,
-      quantity: 1,
-      imageUrl: 'https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=200',
-    },
-  ]);
+  const [cart, setCart] = useState<CartItem[]>([]);
 
   const [formData, setFormData] = useState({
     fullName: '',
@@ -239,7 +222,25 @@ export default function CheckoutPage(): React.JSX.Element {
           </div>
         )}
 
-        <form onSubmit={handleSubmitOrder} className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        {cart.length === 0 ? (
+          <div className="bg-white rounded-3xl p-12 text-center border border-[#ECE0DD] shadow-sm max-w-lg mx-auto my-8">
+            <div className="w-16 h-16 rounded-full bg-[#FFF8F6] text-[#9C3A50] flex items-center justify-center mx-auto mb-4 border border-[#ECE0DD]">
+              <Banknote className="w-8 h-8" />
+            </div>
+            <h2 className="font-serif-title text-xl font-bold text-[#201A19] mb-2">Sepetinizde Ürün Yok</h2>
+            <p className="text-sm text-[#554244] mb-6">
+              Ödeme ve sipariş adımına geçmek için lütfen önce sepetinize ürün ekleyiniz.
+            </p>
+            <Link
+              href="/"
+              className="inline-flex items-center space-x-2 bg-[#9C3A50] hover:bg-[#7A2B3C] text-white font-bold text-sm px-6 py-3 rounded-full transition shadow-md"
+            >
+              <span>Alışverişe Başla</span>
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        ) : (
+          <form onSubmit={handleSubmitOrder} className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column: Delivery Form & Payment Selection */}
           <div className="lg:col-span-8 space-y-6">
             {/* Step 1: Teslimat Bilgileri */}
@@ -514,6 +515,7 @@ export default function CheckoutPage(): React.JSX.Element {
             </div>
           </div>
         </form>
+        )}
       </div>
     </div>
   );

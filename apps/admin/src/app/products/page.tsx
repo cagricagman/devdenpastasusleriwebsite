@@ -27,84 +27,32 @@ interface ProductItem {
   image: string;
 }
 
-const initialProducts: ProductItem[] = [
-  {
-    id: 'prod-001',
-    name: 'Gold Pleksi "Happy Birthday" Pasta Süsü',
-    sku: 'GB-TOPPER-GLD-01',
-    category: 'Pasta Süsleri & Topperlar',
-    price: 49.90,
-    discountPrice: 39.90,
-    stock: 120,
-    status: 'ACTIVE',
-    image: 'https://images.unsplash.com/photo-1535141192574-5d4897c13136?w=200',
-  },
-  {
-    id: 'prod-002',
-    name: 'Rose Gold "İyi Ki Doğdun" Pasta Topper',
-    sku: 'GB-TOPPER-RG-02',
-    category: 'Pasta Süsleri & Topperlar',
-    price: 54.90,
-    discountPrice: 44.90,
-    stock: 85,
-    status: 'ACTIVE',
-    image: 'https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?w=200',
-  },
-  {
-    id: 'prod-003',
-    name: 'Altın Metal İncili Minyatür Pasta Tacı',
-    sku: 'TAC-CROWN-GLD-01',
-    category: 'Taçlar & Aksesuarlar',
-    price: 89.90,
-    discountPrice: 74.90,
-    stock: 3,
-    status: 'LOW_STOCK',
-    image: 'https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=200',
-  },
-  {
-    id: 'prod-004',
-    name: '3D Maket Kelebek Seti (12 Parça - Rose Gold)',
-    sku: 'DEC-BUTTERFLY-01',
-    category: 'Pasta Üstü Dekorasyon',
-    price: 34.90,
-    stock: 45,
-    status: 'ACTIVE',
-    image: 'https://images.unsplash.com/photo-1582293041079-7814c2f12063?w=200',
-  },
-  {
-    id: 'prod-005',
-    name: 'Altın Işıltılı Yenebilir Toz Sprey Sim (10g)',
-    sku: 'GB-SPREY-GLD-02',
-    category: 'Renkli Gıda Boyaları',
-    price: 64.90,
-    stock: 150,
-    status: 'ACTIVE',
-    image: 'https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=200',
-  },
-  {
-    id: 'prod-006',
-    name: 'Şeffaf Akrilik Pasta Standı (3 Katlı)',
-    sku: 'STD-ACRYLIC-03',
-    category: 'Standlı Pasta Süsleri',
-    price: 189.90,
-    discountPrice: 159.90,
-    stock: 12,
-    status: 'ACTIVE',
-    image: 'https://images.unsplash.com/photo-1535141192574-5d4897c13136?w=200',
-  },
-];
-
 export default function AdminProductsPage(): React.JSX.Element {
-  const [products, setProducts] = useState<ProductItem[]>(initialProducts);
+  const [products, setProducts] = useState<ProductItem[]>([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [categoryFilter, setCategoryFilter] = useState('ALL');
 
   // Pagination state
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 4;
+  const itemsPerPage = 6;
 
   const [deletingProduct, setDeletingProduct] = useState<ProductItem | null>(null);
   const [notification, setNotification] = useState<string | null>(null);
+
+  // Load products from localStorage
+  React.useEffect(() => {
+    try {
+      const saved = localStorage.getItem('wakko_admin_products');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed)) {
+          setProducts(parsed);
+        }
+      }
+    } catch (e) {
+      // ignore
+    }
+  }, []);
 
   const showNotification = (msg: string) => {
     setNotification(msg);
@@ -113,7 +61,13 @@ export default function AdminProductsPage(): React.JSX.Element {
 
   const handleDeleteConfirm = () => {
     if (!deletingProduct) return;
-    setProducts(products.filter((p) => p.id !== deletingProduct.id));
+    const updated = products.filter((p) => p.id !== deletingProduct.id);
+    setProducts(updated);
+    try {
+      localStorage.setItem('wakko_admin_products', JSON.stringify(updated));
+    } catch (e) {
+      // ignore
+    }
     showNotification(`"${deletingProduct.name}" ürünü başarıyla silindi!`);
     setDeletingProduct(null);
   };
@@ -215,7 +169,20 @@ export default function AdminProductsPage(): React.JSX.Element {
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
-              {paginatedProducts.map((product) => (
+              {paginatedProducts.length === 0 ? (
+                <tr>
+                  <td colSpan={7} className="py-16 text-center">
+                    <div className="w-14 h-14 rounded-2xl bg-slate-100 text-[#9C3A50] mx-auto flex items-center justify-center mb-3">
+                      <Package className="w-7 h-7" />
+                    </div>
+                    <p className="text-sm font-bold text-slate-800">Kayıtlı Ürün Bulunamadı</p>
+                    <p className="text-xs text-slate-400 mt-1 max-w-sm mx-auto">
+                      Veritabanında ürün bulunmamaktadır. Sağ üstteki "Yeni Ürün Ekle" butonuna tıklayarak ilk ürününüzü ekleyebilirsiniz.
+                    </p>
+                  </td>
+                </tr>
+              ) : (
+                paginatedProducts.map((product) => (
                 <tr key={product.id} className="hover:bg-slate-50/80 transition">
                   <td className="py-3 px-4 font-bold text-slate-900 flex items-center space-x-3">
                     <img src={product.image} alt={product.name} className="w-10 h-10 object-cover rounded-lg border border-slate-200" />
@@ -269,7 +236,8 @@ export default function AdminProductsPage(): React.JSX.Element {
                     </div>
                   </td>
                 </tr>
-              ))}
+              ))
+            )}
             </tbody>
           </table>
         </div>

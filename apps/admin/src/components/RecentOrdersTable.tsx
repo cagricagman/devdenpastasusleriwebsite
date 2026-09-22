@@ -1,54 +1,20 @@
 'use client';
 
-import React, { useState } from 'react';
-import { Eye, CheckCircle2, Clock, Truck, AlertCircle } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { Eye, CheckCircle2, Clock, Truck, AlertCircle, ShoppingCart } from 'lucide-react';
 
-const mockOrders = [
-  {
-    id: '1',
-    orderNumber: 'WAKKO-2026-00001',
-    customerName: 'Ayşe Yılmaz',
-    email: 'ayse@example.com',
-    date: '24 Ağu 2026',
-    itemsCount: 3,
-    total: 184.70,
-    paymentMethod: 'Kapıda Ödeme',
-    status: 'DELIVERED',
-  },
-  {
-    id: '2',
-    orderNumber: 'WAKKO-2026-00002',
-    customerName: 'Mehmet Demir',
-    email: 'mehmet@example.com',
-    date: '24 Ağu 2026',
-    itemsCount: 1,
-    total: 219.00,
-    paymentMethod: 'Kapıda Ödeme',
-    status: 'PROCESSING',
-  },
-  {
-    id: '3',
-    orderNumber: 'WAKKO-2026-00003',
-    customerName: 'Zeynep Kaya',
-    email: 'zeynep@example.com',
-    date: '23 Ağu 2026',
-    itemsCount: 4,
-    total: 345.50,
-    paymentMethod: 'Kredi Kartı',
-    status: 'SHIPPED',
-  },
-  {
-    id: '4',
-    orderNumber: 'WAKKO-2026-00004',
-    customerName: 'Can Öztürk',
-    email: 'can@example.com',
-    date: '23 Ağu 2026',
-    itemsCount: 2,
-    total: 119.90,
-    paymentMethod: 'Kapıda Ödeme',
-    status: 'PENDING',
-  },
-];
+interface OrderItem {
+  id: string;
+  orderNumber: string;
+  customerName: string;
+  email: string;
+  date: string;
+  itemsCount?: number;
+  total: number;
+  paymentMethod: string;
+  status: string;
+}
 
 const getStatusBadge = (status: string) => {
   switch (status) {
@@ -84,12 +50,30 @@ const getStatusBadge = (status: string) => {
 };
 
 export const RecentOrdersTable: React.FC = () => {
-  const [orders, setOrders] = useState(mockOrders);
+  const [orders, setOrders] = useState<OrderItem[]>([]);
+
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem('wakko_orders');
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed)) {
+          setOrders(parsed);
+        }
+      }
+    } catch (e) {
+      // ignore
+    }
+  }, []);
 
   const handleStatusChange = (id: string, newStatus: string) => {
-    setOrders((prev) =>
-      prev.map((o) => (o.id === id ? { ...o, status: newStatus } : o))
-    );
+    const updated = orders.map((o) => (o.id === id ? { ...o, status: newStatus } : o));
+    setOrders(updated);
+    try {
+      localStorage.setItem('wakko_orders', JSON.stringify(updated));
+    } catch (e) {
+      // ignore
+    }
   };
 
   return (
@@ -99,9 +83,12 @@ export const RecentOrdersTable: React.FC = () => {
           <h2 className="text-lg font-bold text-slate-900">Son Siparişler</h2>
           <p className="text-xs text-slate-500">Müşterilerden gelen gerçek zamanlı sipariş akışı.</p>
         </div>
-        <button className="text-xs font-bold text-[#9C3A50] hover:text-[#7A2B3C] border border-[#FFD9DE] bg-[#FFF0F2] px-3.5 py-1.5 rounded-xl transition">
+        <Link
+          href="/orders"
+          className="text-xs font-bold text-[#9C3A50] hover:text-[#7A2B3C] border border-[#FFD9DE] bg-[#FFF0F2] px-3.5 py-1.5 rounded-xl transition inline-block text-center"
+        >
           Tüm Siparişleri Gör ({orders.length})
-        </button>
+        </Link>
       </div>
 
       <div className="overflow-x-auto">
@@ -118,43 +105,63 @@ export const RecentOrdersTable: React.FC = () => {
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-100">
-            {orders.map((order) => (
-              <tr key={order.id} className="hover:bg-slate-50/80 transition">
-                <td className="py-3.5 px-4 font-extrabold text-slate-900">
-                  {order.orderNumber}
-                </td>
-                <td className="py-3.5 px-4">
-                  <div className="font-semibold text-slate-900">{order.customerName}</div>
-                  <div className="text-[11px] text-slate-400">{order.email}</div>
-                </td>
-                <td className="py-3.5 px-4 font-medium">{order.date}</td>
-                <td className="py-3.5 px-4 font-extrabold text-slate-900">
-                  ₺{order.total.toFixed(2)}
-                </td>
-                <td className="py-3.5 px-4 font-medium text-slate-600">
-                  {order.paymentMethod}
-                </td>
-                <td className="py-3.5 px-4">{getStatusBadge(order.status)}</td>
-                <td className="py-3.5 px-4 text-right">
-                  <div className="flex items-center justify-end space-x-2">
-                    <select
-                      value={order.status}
-                      onChange={(e) => handleStatusChange(order.id, e.target.value)}
-                      className="bg-slate-100 border border-slate-200 rounded-lg px-2 py-1 text-[11px] font-semibold text-slate-700 focus:outline-none"
-                    >
-                      <option value="PENDING">Onay Bekliyor</option>
-                      <option value="PROCESSING">Hazırlanıyor</option>
-                      <option value="SHIPPED">Kargoda</option>
-                      <option value="DELIVERED">Teslim Edildi</option>
-                    </select>
-
-                    <button title="Detay İncele" className="p-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 transition">
-                      <Eye className="w-3.5 h-3.5" />
-                    </button>
+            {orders.length === 0 ? (
+              <tr>
+                <td colSpan={7} className="py-12 text-center">
+                  <div className="w-12 h-12 rounded-2xl bg-slate-100 text-[#9C3A50] mx-auto flex items-center justify-center mb-2.5">
+                    <ShoppingCart className="w-6 h-6" />
                   </div>
+                  <p className="text-sm font-bold text-slate-700">Henüz gelen bir sipariş yok</p>
+                  <p className="text-xs text-slate-400 mt-0.5">
+                    Yeni gelen siparişler burada anlık olarak gösterilecektir.
+                  </p>
                 </td>
               </tr>
-            ))}
+            ) : (
+              orders.slice(0, 5).map((order) => (
+                <tr key={order.id} className="hover:bg-slate-50/80 transition">
+                  <td className="py-3.5 px-4 font-extrabold text-slate-900">
+                    <Link href={`/orders/${order.id}`} className="hover:text-[#9C3A50]">
+                      {order.orderNumber}
+                    </Link>
+                  </td>
+                  <td className="py-3.5 px-4">
+                    <div className="font-semibold text-slate-900">{order.customerName}</div>
+                    <div className="text-[11px] text-slate-400">{order.email}</div>
+                  </td>
+                  <td className="py-3.5 px-4 font-medium">{order.date}</td>
+                  <td className="py-3.5 px-4 font-extrabold text-slate-900">
+                    ₺{order.total.toFixed(2)}
+                  </td>
+                  <td className="py-3.5 px-4 font-medium text-slate-600">
+                    {order.paymentMethod}
+                  </td>
+                  <td className="py-3.5 px-4">{getStatusBadge(order.status)}</td>
+                  <td className="py-3.5 px-4 text-right">
+                    <div className="flex items-center justify-end space-x-2">
+                      <select
+                        value={order.status}
+                        onChange={(e) => handleStatusChange(order.id, e.target.value)}
+                        className="bg-slate-100 border border-slate-200 rounded-lg px-2 py-1 text-[11px] font-semibold text-slate-700 focus:outline-none"
+                      >
+                        <option value="PENDING">Onay Bekliyor</option>
+                        <option value="PROCESSING">Hazırlanıyor</option>
+                        <option value="SHIPPED">Kargoda</option>
+                        <option value="DELIVERED">Teslim Edildi</option>
+                      </select>
+
+                      <Link
+                        href={`/orders/${order.id}`}
+                        title="Detay İncele"
+                        className="p-1.5 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-600 transition"
+                      >
+                        <Eye className="w-3.5 h-3.5" />
+                      </Link>
+                    </div>
+                  </td>
+                </tr>
+              ))
+            )}
           </tbody>
         </table>
       </div>
