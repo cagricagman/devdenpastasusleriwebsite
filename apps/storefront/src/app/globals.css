@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-playfair: 'Playfair Display', serif;
+  --font-manrope: 'Manrope', sans-serif;
+  --color-primary: #9C3A50;
+  --color-gold: #FDC979;
+  --bg-main: #FFF8F6;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: #201A19;
+  font-family: var(--font-manrope);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .font-serif-title {
+  font-family: var(--font-playfair);
+}
+
+/* Glassmorphism Effect */
+.glass-effect {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Shimmer Loading animation */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(90deg, #f0e6e4 25%, #f9f2f1 50%, #f0e6e4 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFF8F6;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DBC0C3;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9C3A50;
+}

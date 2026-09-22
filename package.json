@@ -1,0 +1,29 @@
+{
+  "name": "wakko-pasta-susleri-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Wakko Pasta Süsleri Monorepo E-Ticaret Platformu",
+  "packageManager": "pnpm@12.5.1",
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "clean": "turbo run clean",
+    "format": "prettier --write \"**/*.{ts,tsx,md,json}\""
+  },
+  "overrides": {
+    "@types/react": "^18.3.1",
+    "@types/react-dom": "^18.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "turbo": "^2.10.11",
+    "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  }
+}

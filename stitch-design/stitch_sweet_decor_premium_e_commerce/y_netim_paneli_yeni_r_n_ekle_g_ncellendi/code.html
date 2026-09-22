@@ -1,0 +1,304 @@
+<html lang="tr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={theme:{extend:{"colors":{"on-error-container":"#93000a","on-surface":"#201a19","surface-container-high":"#f1e6e2","on-tertiary":"#ffffff","background":"#fff8f6","on-secondary":"#ffffff","on-background":"#201a19","on-surface-variant":"#554244","on-primary-container":"#fffbff","surface-variant":"#ece0dd","primary-fixed-dim":"#ffb2bd","on-tertiary-fixed":"#00210f","on-tertiary-fixed-variant":"#1d5033","surface-dim":"#e3d8d4","tertiary-fixed":"#b9efc8","surface":"#fff8f6","surface-container-low":"#fdf1ee","on-primary-fixed":"#400014","secondary-fixed":"#ffdeae","primary-container":"#bb5268","tertiary-container":"#4d7f5e","secondary-container":"#fdc979","inverse-surface":"#352f2d","surface-container-highest":"#ece0dd","on-error":"#ffffff","outline-variant":"#dbc0c3","on-secondary-container":"#78530a","surface-bright":"#fff8f6","outline":"#887174","inverse-primary":"#ffb2bd","surface-tint":"#9f3c52","surface-container":"#f7ebe8","on-secondary-fixed-variant":"#604100","error-container":"#ffdad6","primary-fixed":"#ffd9de","tertiary":"#346647","on-primary-fixed-variant":"#80253c","tertiary-fixed-dim":"#9dd3ad","secondary":"#7d5710","inverse-on-surface":"#faeeeb","on-primary":"#ffffff","primary":"#9c3a50","secondary-fixed-dim":"#f1be6f","on-secondary-fixed":"#281800","surface-container-lowest":"#ffffff","on-tertiary-container":"#f6fff5","error":"#ba1a1a"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"stack-sm":"8px","stack-xl":"64px","margin-desktop":"64px","container-max":"1280px","stack-lg":"32px","stack-xs":"4px","margin-mobile":"20px","gutter":"24px","stack-md":"16px","unit":"4px"},"fontFamily":{"headline-lg":["Playfair Display"],"display-lg":["Playfair Display"],"label-md":["Manrope"],"title-lg":["Manrope"],"body-sm":["Manrope"],"body-md":["Manrope"],"body-lg":["Manrope"],"headline-lg-mobile":["Playfair Display"],"headline-md":["Playfair Display"],"label-sm":["Manrope"],"display-md":["Playfair Display"]},"fontSize":{"headline-lg":["30px",{"lineHeight":"38px","fontWeight":"600"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"label-md":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"title-lg":["20px",{"lineHeight":"28px","fontWeight":"600"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"700"}],"display-md":["36px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"700"}]}}}}</script><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/></head><body class="bg-background font-body-md text-on-surface">
+<aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex flex-col overflow-y-auto">
+<div class="p-stack-md flex items-center gap-3 border-b border-outline-variant/30 mb-stack-md">
+<img alt="Birlik Pastacılık Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwgjAps8wwJ4nU5wa30HxhoS1gBwHduAXcEknfHCQ8Uc3WAtFQN8a7eJ1JhgBHXnz5pI-p5_Y7NRev_CBHh_zEVSzRwGxc-9Ft5g6TFvEQIMrT6hQgTVr9pIGtNFd6mVgXvlHk24nQjd4Fvq0w_DdOTasQXwj8OxU65PInVBSY_ZyPetUCyktAOePySkti58CmRiKZB2er-JFzgXfmHWBrvYVJIBDyUkmt4HU1_xmuP2NV-gRGyRmvuw"/>
+<span class="font-headline-md text-headline-md text-primary">Birlik</span>
+</div>
+<nav class="flex-1 px-stack-sm space-y-1">
+<a class="flex items-center px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all" data-path="dashboard" href="#">
+<span class="material-symbols-outlined mr-3">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<div class="pt-stack-sm">
+<p class="px-4 py-2 text-[11px] font-bold uppercase tracking-wider text-outline">Ürün Yönetimi</p>
+<a aria-current="page" class="flex items-center px-4 py-2 rounded-lg bg-primary-container text-on-primary-container font-semibold shadow-sm transition-all ml-2" data-path="urunler" href="#">
+<span class="material-symbols-outlined text-[20px] mr-3">inventory_2</span>
+<span class="font-label-md text-label-md">Ürünler</span>
+</a>
+<a class="flex items-center px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all ml-2" data-path="stok-yonetimi" href="#">
+<span class="material-symbols-outlined text-[20px] mr-3">inventory</span>
+<span class="font-label-md text-label-md">Stok Yönetimi</span>
+</a>
+</div>
+<div class="pt-stack-sm">
+<p class="px-4 py-2 text-[11px] font-bold uppercase tracking-wider text-outline">Siparişler</p>
+<a class="flex items-center px-4 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all ml-2" data-path="tum-siparisler" href="#">
+<span class="material-symbols-outlined text-[20px] mr-3">shopping_cart</span>
+<span class="font-label-md text-label-md">Tüm Siparişler</span>
+</a>
+</div>
+<a class="flex items-center px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all" data-path="musteriler" href="#">
+<span class="material-symbols-outlined mr-3">group</span>
+<span class="font-label-md text-label-md">Müşteriler</span>
+</a>
+<a class="flex items-center px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all" data-path="icerik-yonetimi" href="#">
+<span class="material-symbols-outlined mr-3">article</span>
+<span class="font-label-md text-label-md">İçerik</span>
+</a>
+<a class="flex items-center px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-high transition-all" data-path="ayarlar" href="#">
+<span class="material-symbols-outlined mr-3">settings</span>
+<span class="font-label-md text-label-md">Ayarlar</span>
+</a>
+</nav>
+</aside>
+<div class="pl-72 w-full min-h-screen flex flex-col">
+<header class="sticky top-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-label-md">
+<span class="text-outline">Admin</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-outline font-semibold">Ürün Yönetimi</span>
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+<span class="text-on-surface font-semibold">Yeni Ürün Ekle</span>
+</div>
+<div class="flex items-center gap-stack-md">
+<button class="p-2 rounded-full hover:bg-surface-container-high text-on-surface-variant relative">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full"></span>
+</button>
+<div class="flex items-center gap-3 pl-stack-md border-l border-outline-variant/50">
+<div class="text-right hidden sm:block">
+<p class="font-label-md text-label-md text-on-surface">Yönetici</p>
+<p class="text-[10px] text-outline uppercase font-bold">Admin</p>
+</div>
+<img alt="Profile" class="w-9 h-9 rounded-full object-cover border border-outline-variant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyDtIVE_5mqfn7FRTs60wnSz2LG-9WsV_Sa0xgJh-KgGOYMuCKwXyEDe-9XuDBujbq1M_5iLc3Yq5mcKaMuI8yVqWQ4mxElPVcExmEAJjePUlWO1IRbb6Y5VNVSYMDxNBkqBs2OMdgB3qT_1SU5wtIiHMhoBIqHrWu62WkuAyLiI91TJLwcaZaOajBsXmCMtFc2NaUiqRN3Lk0RqPiCvuXoLUyEK1K4EvD-cv1qTq2HUGHTmZId8Fw3w"/>
+</div>
+</div>
+</header>
+<main class="flex-1 pt-stack-md px-gutter pb-32">
+<div class="flex flex-col w-full relative">
+<div class="w-full mb-stack-xl">
+<div class="flex items-center justify-between">
+<h1 class="font-display-md text-on-surface">Yeni Ürün Ekle</h1>
+<div class="hidden lg:flex items-center gap-2 text-label-sm text-on-surface-variant bg-surface-container-high px-3 py-1 rounded-full">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span> Taslak kaydedildi
+</div>
+</div>
+</div>
+<div class="w-full grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<div class="lg:col-span-8 flex flex-col gap-stack-lg">
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-stack-lg relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-700"></div>
+<div class="flex items-center gap-3 mb-stack-md">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-md">1</div>
+<h2 class="font-headline-md text-on-surface">Temel Bilgiler</h2>
+</div>
+<div class="space-y-stack-md">
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-on-surface" for="product-name">Ürün Adı <span class="text-error">*</span></label>
+<input class="w-full bg-surface-container px-4 py-3 rounded-lg text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow" id="product-name" placeholder="Örn: 20cm Pleksi Harf Pasta Süsü" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-on-surface" for="product-sku">Stok Kodu (SKU) <span class="text-error">*</span></label>
+<input class="w-full bg-surface-container px-4 py-3 rounded-lg text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/50 transition-shadow" id="product-sku" placeholder="Örn: PLK-HRF-20-A" type="text"/>
+<p class="text-label-sm text-on-surface-variant mt-1">Benzersiz bir stok kodu girin veya otomatik oluşturun.</p>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-on-surface">Ürün Açıklaması</label>
+<div class="border border-outline-variant rounded-lg overflow-hidden flex flex-col bg-surface-container-lowest">
+<div class="bg-surface-container-low px-2 py-2 flex items-center gap-1 flex-wrap border-b border-outline-variant/50">
+<button class="p-1.5 rounded hover:bg-surface-variant text-on-surface-variant transition-colors" type="button"><span class="material-symbols-outlined text-lg">format_bold</span></button>
+<button class="p-1.5 rounded hover:bg-surface-variant text-on-surface-variant transition-colors" type="button"><span class="material-symbols-outlined text-lg">format_italic</span></button>
+<button class="p-1.5 rounded hover:bg-surface-variant text-on-surface-variant transition-colors" type="button"><span class="material-symbols-outlined text-lg">format_underlined</span></button>
+<div class="w-px h-5 bg-outline-variant mx-1"></div>
+<button class="p-1.5 rounded hover:bg-surface-variant text-on-surface-variant transition-colors" type="button"><span class="material-symbols-outlined text-lg">format_list_bulleted</span></button>
+<button class="p-1.5 rounded hover:bg-surface-variant text-on-surface-variant transition-colors" type="button"><span class="material-symbols-outlined text-lg">format_list_numbered</span></button>
+<div class="w-px h-5 bg-outline-variant mx-1"></div>
+<button class="p-1.5 rounded hover:bg-surface-variant text-on-surface-variant transition-colors" type="button"><span class="material-symbols-outlined text-lg">link</span></button>
+<button class="p-1.5 rounded hover:bg-surface-variant text-on-surface-variant transition-colors" type="button"><span class="material-symbols-outlined text-lg">image</span></button>
+</div>
+<textarea class="w-full bg-transparent px-4 py-3 text-body-md text-on-surface resize-y focus:outline-none min-h-[150px]" id="product-desc" placeholder="Müşterilerinizin ürün hakkında bilmesi gereken detayları buraya ekleyin..." rows="6"></textarea>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-stack-lg relative overflow-hidden group">
+<div class="absolute bottom-0 left-0 w-40 h-40 bg-secondary/5 rounded-tr-[100px] -z-10 group-hover:scale-110 transition-transform duration-700"></div>
+<div class="flex items-center gap-3 mb-stack-md">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-label-md">2</div>
+<h2 class="font-headline-md text-on-surface">Fiyatlandırma &amp; Stok</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<div class="space-y-stack-md">
+<div class="flex flex-col gap-2 relative">
+<label class="font-label-md text-on-surface" for="price">Satış Fiyatı <span class="text-error">*</span></label>
+<div class="relative flex items-center">
+<span class="absolute left-4 text-on-surface-variant font-body-md">₺</span>
+<input class="w-full bg-surface-container pl-8 pr-4 py-3 rounded-lg text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-shadow" id="price" placeholder="0.00" type="number"/>
+</div>
+</div>
+<div class="flex flex-col gap-2 relative">
+<label class="font-label-md text-on-surface" for="old-price">Eski Fiyat (İndirim Gösterimi)</label>
+<div class="relative flex items-center">
+<span class="absolute left-4 text-on-surface-variant font-body-md">₺</span>
+<input class="w-full bg-surface-container pl-8 pr-4 py-3 rounded-lg text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-shadow" id="old-price" placeholder="0.00" type="number"/>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-on-surface" for="tax-rate">KDV Oranı</label>
+<div class="relative">
+<select class="w-full bg-surface-container px-4 py-3 rounded-lg text-body-md text-on-surface appearance-none focus:outline-none focus:ring-2 focus:ring-secondary/50 cursor-pointer" id="tax-rate">
+<option value="20">%20</option>
+<option value="10">%10</option>
+<option value="1">%1</option>
+<option value="0">Muaf</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+</div>
+<div class="space-y-stack-md">
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-on-surface" for="stock-qty">Stok Miktarı</label>
+<input class="w-full bg-surface-container px-4 py-3 rounded-lg text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-shadow" id="stock-qty" placeholder="0" type="number"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-on-surface" for="stock-alert">Minimum Stok Uyarısı</label>
+<input class="w-full bg-surface-container px-4 py-3 rounded-lg text-body-md text-on-surface focus:outline-none focus:ring-2 focus:ring-secondary/50 transition-shadow" id="stock-alert" placeholder="10" type="number"/>
+<p class="text-label-sm text-on-surface-variant mt-1">Stok bu miktarın altına düştüğünde bildirim alırsınız.</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-stack-lg">
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-stack-md relative">
+<div class="flex items-center gap-3 mb-stack-md">
+<div class="w-6 h-6 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-label-sm">3</div>
+<h2 class="font-title-lg text-on-surface">Görsel Yönetimi</h2>
+</div>
+<div class="flex flex-col gap-4">
+<div class="border-2 border-dashed border-primary/30 rounded-xl bg-surface-container-low hover:bg-primary-fixed/20 transition-colors p-8 flex flex-col items-center justify-center text-center cursor-pointer group" id="dropzone">
+<div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-2xl">cloud_upload</span>
+</div>
+<p class="font-label-md text-primary mb-1">Görselleri sürükleyip bırakın</p>
+<p class="text-body-sm text-on-surface-variant">veya cihazdan seçmek için tıklayın.</p>
+<p class="text-[10px] text-on-surface-variant mt-2 tracking-wider uppercase">PNG, JPG, WEBP (Max 5MB)</p>
+</div>
+<div class="grid grid-cols-3 gap-2 mt-2">
+<div class="aspect-square rounded-lg bg-surface-container overflow-hidden relative group">
+<div class="w-full h-full bg-cover bg-center" data-alt="A close up, high quality studio photo of a shiny gold 20cm acrylic cake topper in the shape of letter A, resting on a white marble surface, warm soft lighting highlighting the reflections. Product photography." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCX6bPAKSFlKIFDNiKA40ChkjXuStEWF5pxmHmJ03rFXqDwPlm_KhuIuqzKLYvwHgrAnNJRa5XxU7tex1nH4y1mCEG3lWXswOjSqx4DYgSrcFDb9qk-3nus4o1zF2bspKfywxCiWPRtbUUTYPGXs6A4jcRlkg98faFCKKLa_ETOQdQr_CD8F4eVhCzDWi__EAWZ0ur8XQ9KgFuCuqnBoaO-lUMBQ5_VJjJ-idFcQMiR6EtTJDbP8d0DYQ')"></div>
+<div class="absolute inset-0 bg-inverse-surface/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-2">
+<button class="w-8 h-8 bg-surface-container-lowest text-on-surface rounded-full flex items-center justify-center hover:text-error transition-colors"><span class="material-symbols-outlined text-sm">delete</span></button>
+<span class="text-[10px] text-surface-container-lowest uppercase tracking-wider font-bold">Kapak</span>
+</div>
+<div class="absolute top-1 left-1 bg-primary text-on-primary text-[10px] px-1.5 py-0.5 rounded font-bold">1</div>
+</div>
+<div class="aspect-square rounded-lg bg-surface-container overflow-hidden relative group">
+<div class="w-full h-full bg-cover bg-center" data-alt="A high quality product photo of a shiny gold acrylic cake topper being held by a hand holding tweezers to show scale, white background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAbaFMYzrdQor2X1m_Wqa_3KC6rk6HzQQdPEDBx9YxAji-g8JuMY_oCHQNn0C0yoZbSEWf6osAhjk3cLyKna625QaZn04zWviDZA5knuoHpbBlQzafaFW1wuwaB578x8qAjGioEvoeu7GXjf4yJoY7JuZlC03kp0zQaF1ub9sRRVT8ZWzt7YgB5-L_H-kwixF3-5M-oRUskYqVs7YyJQSY7Z1bq-okrwHGPVZtZjn6R8DqmnUeb8YWugQ')"></div>
+<div class="absolute inset-0 bg-inverse-surface/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+<button class="w-8 h-8 bg-surface-container-lowest text-on-surface rounded-full flex items-center justify-center hover:text-error transition-colors"><span class="material-symbols-outlined text-sm">delete</span></button>
+</div>
+</div>
+<div class="aspect-square rounded-lg border border-dashed border-outline-variant flex flex-col items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary/50 cursor-pointer transition-colors">
+<span class="material-symbols-outlined">add_photo_alternate</span>
+<span class="text-[10px] mt-1 font-bold">Ekle</span>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-stack-md">
+<div class="flex items-center gap-3 mb-stack-md">
+<div class="w-6 h-6 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-label-sm">4</div>
+<h2 class="font-title-lg text-on-surface">Kategori &amp; Marka</h2>
+</div>
+<div class="space-y-stack-md">
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-on-surface">Kategori Seçimi</label>
+<div class="relative">
+<select class="w-full bg-surface-container px-4 py-3 rounded-lg text-body-md text-on-surface appearance-none focus:outline-none focus:ring-2 focus:ring-tertiary/50 cursor-pointer">
+<option disabled="" selected="" value="">Kategori Seçiniz</option>
+<option value="1">Pasta Süsleri</option>
+<option value="2">Pasta Malzemeleri</option>
+<option value="3">Kalıplar</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-on-surface">Alt Kategori</label>
+<div class="relative">
+<select class="w-full bg-surface-container px-4 py-3 rounded-lg text-body-md text-on-surface appearance-none focus:outline-none focus:ring-2 focus:ring-tertiary/50 cursor-pointer">
+<option disabled="" selected="" value="">Önce kategori seçiniz</option>
+<option value="1a">Pleksi Yazılar</option>
+<option value="1b">Mumlar</option>
+<option value="1c">Kürdanlar</option>
+</select>
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+</div>
+</section>
+<section class="bg-surface-container-lowest rounded-xl shadow-sm p-stack-md">
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-on-surface mb-2">Özellikler (Opsiyonel)</label>
+<div class="flex flex-wrap gap-2">
+<div class="inline-flex items-center gap-1 bg-surface-container-low border border-outline-variant px-3 py-1.5 rounded-full text-label-sm text-on-surface cursor-pointer hover:bg-secondary-fixed hover:border-secondary transition-colors group">
+<span>Renk: Altın</span>
+<span class="material-symbols-outlined text-[14px] opacity-50 group-hover:opacity-100 group-hover:text-error transition-opacity">close</span>
+</div>
+<div class="inline-flex items-center gap-1 bg-surface-container-low border border-outline-variant px-3 py-1.5 rounded-full text-label-sm text-on-surface cursor-pointer hover:bg-secondary-fixed hover:border-secondary transition-colors group">
+<span>Renk: Gümüş</span>
+<span class="material-symbols-outlined text-[14px] opacity-50 group-hover:opacity-100 group-hover:text-error transition-opacity">close</span>
+</div>
+<button class="inline-flex items-center gap-1 text-primary text-label-sm font-bold px-2 py-1.5 hover:bg-primary-fixed/30 rounded-full transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">add</span> Özellik Ekle
+</button>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<div class="fixed bottom-0 w-[calc(100%-18rem)] left-72 bg-surface-container-lowest/80 backdrop-blur-xl border-t border-outline-variant/30 py-4 z-40 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+<div class="w-full px-gutter flex items-center justify-between">
+<button class="px-6 py-3 rounded-lg text-label-md text-error hover:bg-error-container/50 transition-colors font-bold" type="button">
+Vazgeç ve Çık
+</button>
+<div class="flex items-center gap-4">
+<button class="px-6 py-3 rounded-lg text-label-md text-primary border border-primary hover:bg-primary/5 transition-colors font-bold hidden sm:block" type="button">
+Taslak Olarak Kaydet
+</button>
+<button class="px-8 py-3 rounded-lg bg-primary text-on-primary text-label-md font-bold hover:bg-on-primary-fixed-variant shadow-md hover:shadow-lg transition-all flex items-center gap-2" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+Ürünü Yayınla
+</button>
+</div>
+</div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const dropzone = document.getElementById('dropzone');
+        
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropzone.addEventListener(eventName, preventDefaults, false);
+        });
+
+        function preventDefaults(e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropzone.addEventListener(eventName, highlight, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropzone.addEventListener(eventName, unhighlight, false);
+        });
+
+        function highlight(e) {
+            dropzone.classList.add('bg-primary-fixed', 'border-primary');
+            dropzone.classList.remove('bg-surface-container-low', 'border-primary/30');
+        }
+
+        function unhighlight(e) {
+            dropzone.classList.remove('bg-primary-fixed', 'border-primary');
+            dropzone.classList.add('bg-surface-container-low', 'border-primary/30');
+        }
+    });
+</script>
+</main>
+</div>
+</body></html>

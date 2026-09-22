@@ -1,0 +1,54 @@
+<html lang="tr"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={theme:{extend:{"colors":{"background":"#fff8f6","inverse-primary":"#ffb2bd","surface-container-high":"#f1e6e2","secondary-fixed-dim":"#f1be6f","primary":"#9c3a50","inverse-surface":"#352f2d","surface-variant":"#ece0dd","secondary-fixed":"#ffdeae","primary-container":"#bb5268","inverse-on-surface":"#faeeeb","on-secondary-fixed":"#281800","surface":"#fff8f6","on-secondary":"#ffffff","on-tertiary-container":"#f6fff5","surface-tint":"#9f3c52","on-tertiary-fixed":"#00210f","primary-fixed-dim":"#ffb2bd","on-surface-variant":"#554244","on-primary-fixed-variant":"#80253c","surface-container-lowest":"#ffffff","tertiary-fixed-dim":"#9dd3ad","on-primary-container":"#fffbff","on-error-container":"#93000a","on-error":"#ffffff","surface-bright":"#fff8f6","error":"#ba1a1a","surface-dim":"#e3d8d4","on-surface":"#201a19","secondary":"#7d5710","on-tertiary-fixed-variant":"#1d5033","error-container":"#ffdad6","surface-container-highest":"#ece0dd","on-secondary-container":"#78530a","surface-container":"#f7ebe8","primary-fixed":"#ffd9de","on-primary-fixed":"#400014","outline":"#887174","tertiary-container":"#4d7f5e","on-secondary-fixed-variant":"#604100","secondary-container":"#fdc979","on-primary":"#ffffff","surface-container-low":"#fdf1ee","outline-variant":"#dbc0c3","tertiary":"#346647","on-tertiary":"#ffffff","tertiary-fixed":"#b9efc8","on-background":"#201a19"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"margin-desktop":"64px","margin-mobile":"20px","container-max":"1280px","gutter":"24px","stack-lg":"32px","unit":"4px","stack-sm":"8px","stack-md":"16px","stack-xs":"4px","stack-xl":"64px"},"fontFamily":{"body-md":["Manrope"],"display-lg":["Playfair Display"],"headline-lg":["Playfair Display"],"label-md":["Manrope"],"headline-md":["Playfair Display"],"label-sm":["Manrope"],"headline-lg-mobile":["Playfair Display"],"title-lg":["Manrope"],"body-lg":["Manrope"],"display-md":["Playfair Display"],"body-sm":["Manrope"]},"fontSize":{"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["30px",{"lineHeight":"38px","fontWeight":"600"}],"label-md":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"700"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","fontWeight":"600"}],"title-lg":["20px",{"lineHeight":"28px","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"display-md":["36px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"700"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}]}}}}</script><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&amp;family=Manrope:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/></head><body class="bg-background font-body-md text-on-surface"><main class="min-h-screen w-full flex items-center justify-center p-margin-mobile"><div class="flex flex-col w-full h-full min-h-[calc(100vh-64px)] justify-center items-center">
+<div class="w-full max-w-md p-stack-lg bg-surface rounded-xl shadow-xl flex flex-col gap-stack-md border-t-4" style="border-color: var(--color-primary)">
+<div class="text-center mb-stack-sm">
+<h1 class="font-display-md text-display-md text-primary mb-stack-xs">Hoş Geldiniz</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Birlik Pastacılık'a tekrar hoş geldiniz.</p>
+</div>
+<form class="flex flex-col gap-stack-md" onsubmit="event.preventDefault();">
+<div class="flex flex-col gap-stack-xs">
+<label class="font-label-md text-label-md text-on-surface" for="email">E-posta Adresi</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-stack-sm top-1/2 -translate-y-1/2 text-on-surface-variant">mail</span>
+<input class="w-full h-12 pl-[40px] pr-stack-sm rounded-lg bg-surface-container border border-outline-variant focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors font-body-md text-body-md text-on-surface" id="email" placeholder="ornek@eposta.com" required="" type="email"/>
+</div>
+</div>
+<div class="flex flex-col gap-stack-xs">
+<label class="font-label-md text-label-md text-on-surface" for="password">Şifre</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-stack-sm top-1/2 -translate-y-1/2 text-on-surface-variant">lock</span>
+<input class="w-full h-12 pl-[40px] pr-[40px] rounded-lg bg-surface-container border border-outline-variant focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-colors font-body-md text-body-md text-on-surface" id="password" placeholder="••••••••" required="" type="password"/>
+<button class="absolute right-stack-sm top-1/2 -translate-y-1/2 text-on-surface-variant hover:text-primary transition-colors flex items-center justify-center" onclick="const p = document.getElementById('password'); p.type = p.type === 'password' ? 'text' : 'password'; this.querySelector('span').textContent = p.type === 'password' ? 'visibility_off' : 'visibility';" type="button">
+<span class="material-symbols-outlined">visibility_off</span>
+</button>
+</div>
+</div>
+<div class="flex items-center justify-between mt-stack-xs">
+<label class="flex items-center gap-stack-sm cursor-pointer group">
+<div class="relative flex items-center justify-center">
+<input class="w-5 h-5 appearance-none border border-outline-variant rounded bg-surface-container checked:bg-primary checked:border-primary transition-colors peer cursor-pointer" type="checkbox"/>
+<span class="material-symbols-outlined absolute text-[16px] text-on-primary opacity-0 peer-checked:opacity-100 pointer-events-none transition-opacity">check</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant group-hover:text-on-surface transition-colors">Beni Hatırla</span>
+</label>
+<a class="font-label-sm text-label-sm text-primary hover:text-primary-container transition-colors" href="#">Şifremi Unuttum</a>
+</div>
+<button class="w-full h-12 mt-stack-sm bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:bg-primary-container active:scale-[0.98] transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-stack-xs" type="submit">
+        Giriş Yap
+        <span class="material-symbols-outlined text-[20px]">login</span>
+</button>
+</form>
+<div class="relative flex items-center justify-center mt-stack-sm">
+<div class="absolute inset-0 flex items-center">
+<div class="w-full border-t border-outline-variant"></div>
+</div>
+<span class="relative px-stack-sm bg-surface font-body-sm text-body-sm text-on-surface-variant">veya</span>
+</div>
+<div class="text-center mt-stack-xs">
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+        Hesabınız yok mu? 
+        <a class="font-label-md text-label-md text-primary hover:text-primary-container transition-colors underline decoration-primary/30 underline-offset-4 hover:decoration-primary" href="#">Üye Olun</a>
+</p>
+</div>
+</div>
+</div></main></body></html>

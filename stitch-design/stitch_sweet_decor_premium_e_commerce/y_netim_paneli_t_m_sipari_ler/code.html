@@ -1,0 +1,323 @@
+<!DOCTYPE html><html lang="tr"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap');</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={theme:{extend:{"colors":{"on-secondary-container":"#78530a","on-tertiary-container":"#f6fff5","on-tertiary-fixed-variant":"#1d5033","error":"#ba1a1a","on-tertiary":"#ffffff","secondary-fixed-dim":"#f1be6f","secondary-container":"#fdc979","on-primary-fixed":"#400014","on-primary-container":"#fffbff","surface":"#fff8f6","background":"#fff8f6","on-primary-fixed-variant":"#80253c","surface-container":"#f7ebe8","secondary-fixed":"#ffdeae","on-secondary-fixed":"#281800","surface-container-lowest":"#ffffff","tertiary-fixed":"#b9efc8","primary-container":"#bb5268","on-background":"#201a19","inverse-primary":"#ffb2bd","error-container":"#ffdad6","tertiary":"#346647","surface-tint":"#9f3c52","primary-fixed-dim":"#ffb2bd","on-error":"#ffffff","tertiary-container":"#4d7f5e","tertiary-fixed-dim":"#9dd3ad","on-surface":"#201a19","outline-variant":"#dbc0c3","surface-container-highest":"#ece0dd","surface-dim":"#e3d8d4","on-surface-variant":"#554244","inverse-on-surface":"#faeeeb","surface-container-low":"#fdf1ee","on-secondary-fixed-variant":"#604100","primary":"#9c3a50","inverse-surface":"#352f2d","primary-fixed":"#ffd9de","secondary":"#7d5710","surface-bright":"#fff8f6","outline":"#887174","on-primary":"#ffffff","surface-container-high":"#f1e6e2","on-tertiary-fixed":"#00210f","surface-variant":"#ece0dd","on-error-container":"#93000a","on-secondary":"#ffffff"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"stack-sm":"8px","gutter":"24px","margin-desktop":"64px","stack-xs":"4px","container-max":"1280px","stack-md":"16px","stack-xl":"64px","margin-mobile":"20px","stack-lg":"32px","unit":"4px"},"fontFamily":{"body-sm":["Manrope"],"title-lg":["Manrope"],"label-sm":["Manrope"],"display-lg":["Playfair Display"],"headline-lg-mobile":["Playfair Display"],"headline-md":["Playfair Display"],"display-md":["Playfair Display"],"label-md":["Manrope"],"headline-lg":["Playfair Display"],"body-lg":["Manrope"],"body-md":["Manrope"]},"fontSize":{"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"title-lg":["20px",{"lineHeight":"28px","fontWeight":"600"}],"label-sm":["12px",{"lineHeight":"16px","letterSpacing":"0.04em","fontWeight":"700"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","fontWeight":"600"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],"display-md":["36px",{"lineHeight":"44px","letterSpacing":"-0.01em","fontWeight":"700"}],"label-md":["14px",{"lineHeight":"20px","letterSpacing":"0.01em","fontWeight":"600"}],"headline-lg":["30px",{"lineHeight":"38px","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}]}}}}</script><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"></head><body class="bg-surface-container-low font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-high z-50 flex flex-col shadow-lg"><div class="p-6 flex items-center gap-3 border-b border-outline-variant/30 mb-4"><img alt="Logo" class="h-8 w-auto" src="https://lh3.googleusercontent.com/aida/AEtjO1WdKtPcyrqz62987XYVAe9dBnzeFH_d8e2NE2kJaXtv5ZIuVIlxgqx8G-QKXEnVpc_ic4dqdP9S0Pk6SnWADbEKD1swMcdSfnKvxm0uUpZHpqqE62x-ibRvc-FpclRYzCll6Li7oL5dqhiCTpfiT37EY7xdXS6YTdVt4qOafgb_Bry1jWernWKzJYK5pvHYL3UtlmZCTjSjXDSODFW1kh03pvwXIUq4ZJUDs6FCay2bTrYet2LxcK2v0hU"><span class="font-headline-lg-mobile text-primary">Birlik Admin</span></div><nav class="flex-1 px-4 overflow-y-auto space-y-1 font-body-md" data-active-classes="bg-primary-container text-on-primary-container font-bold shadow-sm"><a class="flex items-center px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined mr-3">dashboard</span>Dashboard</a><div class="py-2"><p class="px-4 text-label-sm text-on-surface-variant/60 uppercase tracking-widest mb-1">Envanter</p><a class="flex items-center px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-all" data-path="urunler" href="#"><span class="material-symbols-outlined mr-3">bakery_dining</span>Ürünler</a><a class="flex items-center px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-all" data-path="stok-yonetimi" href="#"><span class="material-symbols-outlined mr-3">inventory_2</span>Stok Yönetimi</a></div><div class="py-2"><p class="px-4 text-label-sm text-on-surface-variant/60 uppercase tracking-widest mb-1">Satış</p><a class="flex items-center px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-all" data-path="tum-siparisler" href="#"><span class="material-symbols-outlined mr-3">receipt_long</span>Tüm Siparişler</a><a class="flex items-center px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-all" data-path="musteriler" href="#"><span class="material-symbols-outlined mr-3">groups</span>Müşteriler</a></div><div class="py-2 border-t border-outline-variant/30 mt-4"><a class="flex items-center px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-all" data-path="icerik" href="#"><span class="material-symbols-outlined mr-3">article</span>İçerik</a><a class="flex items-center px-4 py-3 rounded-lg text-on-surface-variant hover:bg-surface-container-highest transition-all" data-path="ayarlar" href="#"><span class="material-symbols-outlined mr-3">settings</span>Ayarlar</a></div></nav></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface/80 backdrop-blur-xl z-40 flex items-center justify-between px-8 shadow-[0_1px_8px_rgba(0,0,0,0.02)]"><div class="flex items-center gap-2 text-on-surface-variant font-label-md"><span class="material-symbols-outlined text-[20px]">home</span><span class="material-symbols-outlined text-[16px]">chevron_right</span><span class="">Panel</span></div><div class="flex items-center gap-6"><span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">search</span><div class="relative"><span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary">notifications</span><span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span></div><div class="flex items-center gap-3 border-l border-outline-variant pl-6"><div class="text-right hidden sm:block"><p class="text-label-md text-on-surface leading-none">Admin User</p><p class="text-label-sm text-on-surface-variant">Yönetici</p></div><img alt="Profile" class="w-8 h-8 rounded-full border border-primary/20" src="https://lh3.googleusercontent.com/aida/AEtjO1XD5Onzcydq9A_H58IqiiWmvL8TkKs4uaMderS8_3qPlbRqOzh2kZuKZCuJCyJCiMN_0iwda-_nnGAH8LbXRbPYLlH1wl96AuftPgk3iTPzME8vlssoPYUUKOHDwgPGZs3Wy6Z4EJLLJi7FgX9oO2FOjAqYiKG1S1KTP7a3OH1o3zIph79xNl538n24Afz4MWCP4rUQCwBiNR8witEvoMt6Vc9VdU5bpaXVTOMlxtOVYNAN-MwS3PWQQxPD"></div></div></header><main class="pt-16 p-8 min-h-screen"><div class="flex flex-col w-full h-full gap-stack-lg relative overflow-hidden">
+<div class="absolute -top-[20%] -right-[10%] w-[500px] h-[500px] rounded-full bg-secondary-fixed opacity-20 blur-3xl pointer-events-none z-0"></div>
+<div class="absolute bottom-[10%] -left-[5%] w-[400px] h-[400px] rounded-full bg-tertiary-fixed opacity-20 blur-3xl pointer-events-none z-0"></div>
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-stack-md z-10 w-full relative pt-stack-sm">
+<div class="flex flex-col gap-stack-xs">
+<h1 class="font-display-md text-display-md text-on-surface">Tüm Siparişler</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+        Gelen siparişleri yönetin, durumlarını güncelleyin ve müşteri taleplerini karşılayın.
+      </p>
+</div>
+<div class="flex items-center gap-stack-sm">
+<button class="h-[48px] px-stack-md flex items-center justify-center gap-2 rounded-lg bg-surface-container hover:bg-surface-container-highest text-on-surface transition-all shadow-sm group">
+<span class="material-symbols-outlined text-[20px] group-hover:-translate-y-0.5 transition-transform">download</span>
+<span class="font-label-md text-label-md">Dışa Aktar</span>
+</button>
+<button class="h-[48px] px-stack-md flex items-center justify-center gap-2 rounded-lg bg-primary text-on-primary hover:bg-primary-container hover:text-on-primary-container transition-all shadow-md hover:shadow-lg group">
+<span class="material-symbols-outlined text-[20px] group-hover:rotate-180 transition-transform duration-500">add</span>
+<span class="font-label-md text-label-md">Manuel Sipariş Ekle</span>
+</button>
+</div>
+</div>
+<div class="bg-surface-container-lowest rounded-xl shadow-md flex flex-col z-10 overflow-hidden mt-stack-sm">
+<div class="p-stack-md flex flex-col lg:flex-row justify-between items-start lg:items-center gap-stack-md border-b border-outline-variant/20 bg-surface-container-lowest sticky top-0 z-20">
+<div class="flex overflow-x-auto hide-scrollbar w-full lg:w-auto gap-stack-xs pb-stack-xs lg:pb-0 -mx-stack-md px-stack-md lg:mx-0 lg:px-0">
+<button class="whitespace-nowrap px-stack-md py-stack-xs rounded-full bg-secondary text-on-secondary font-label-md text-label-md shadow-sm transition-all hover:bg-secondary/90">
+          Tümü <span class="ml-1 opacity-80 text-[11px] bg-on-secondary/20 px-1.5 py-0.5 rounded-full">124</span>
+</button>
+<button class="whitespace-nowrap px-stack-md py-stack-xs rounded-full bg-surface-container hover:bg-surface-container-highest text-on-surface-variant font-label-md text-label-md transition-all relative">
+          Yeni
+          <span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full animate-ping"></span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full"></span>
+</button>
+<button class="whitespace-nowrap px-stack-md py-stack-xs rounded-full bg-surface-container hover:bg-surface-container-highest text-on-surface-variant font-label-md text-label-md transition-all">
+          Hazırlanıyor
+        </button>
+<button class="whitespace-nowrap px-stack-md py-stack-xs rounded-full bg-surface-container hover:bg-surface-container-highest text-on-surface-variant font-label-md text-label-md transition-all">
+          Kargodakiler
+        </button>
+<button class="whitespace-nowrap px-stack-md py-stack-xs rounded-full bg-surface-container hover:bg-surface-container-highest text-on-surface-variant font-label-md text-label-md transition-all">
+          Tamamlananlar
+        </button>
+</div>
+<div class="flex items-center gap-stack-sm w-full lg:w-auto">
+<div class="relative w-full lg:w-72 group">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full pl-10 pr-4 py-2.5 bg-surface-container rounded-lg font-body-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/60 focus:outline-none focus:ring-1 focus:ring-primary focus:bg-surface transition-all" placeholder="Sipariş no, müşteri veya ürün ara..." type="text">
+</div>
+<button aria-label="Filtrele" class="p-2.5 rounded-lg bg-surface-container hover:bg-surface-container-highest text-on-surface-variant transition-colors flex-shrink-0">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto w-full">
+<table class="w-full text-left border-collapse whitespace-nowrap">
+<thead>
+<tr class="bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md uppercase tracking-wider">
+<th class="px-stack-md py-stack-sm font-medium w-4">
+<label class="flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox">
+<div class="w-4 h-4 rounded border border-outline-variant peer-checked:bg-primary peer-checked:border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[14px] text-on-primary opacity-0 peer-checked:opacity-100" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+</label>
+</th>
+<th class="px-stack-md py-stack-sm font-medium cursor-pointer hover:text-primary transition-colors group">Sipariş ID <span class="material-symbols-outlined text-[16px] inline-block align-middle opacity-0 group-hover:opacity-100 -ml-1 transition-opacity">arrow_drop_down</span></th>
+<th class="px-stack-md py-stack-sm font-medium">Müşteri</th>
+<th class="px-stack-md py-stack-sm font-medium cursor-pointer hover:text-primary transition-colors group">Tarih <span class="material-symbols-outlined text-[16px] inline-block align-middle opacity-100 -ml-1">arrow_downward</span></th>
+<th class="px-stack-md py-stack-sm font-medium text-right">Tutar</th>
+<th class="px-stack-md py-stack-sm font-medium">Ödeme Yöntemi</th>
+<th class="px-stack-md py-stack-sm font-medium">Durum</th>
+<th class="px-stack-md py-stack-sm font-medium text-center">İşlem</th>
+</tr>
+</thead>
+<tbody class="font-body-sm text-body-sm text-on-surface divide-y divide-outline-variant/10">
+<tr class="hover:bg-surface-container-low transition-colors group/row bg-primary/5">
+<td class="px-stack-md py-stack-sm">
+<label class="flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox">
+<div class="w-4 h-4 rounded border border-outline-variant peer-checked:bg-primary peer-checked:border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[14px] text-on-primary opacity-0 peer-checked:opacity-100" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+</label>
+</td>
+<td class="px-stack-md py-stack-sm font-label-md text-label-md text-primary">
+<a class="hover:underline" href="#">#ORD-092</a>
+<span class="inline-flex ml-2 w-2 h-2 rounded-full bg-error animate-pulse" title="Yeni Sipariş"></span>
+</td>
+<td class="px-stack-md py-stack-sm">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-title-lg text-[14px] font-bold">
+                  AY
+                </div>
+<div class="flex flex-col">
+<span class="font-label-md text-on-surface">Ayşe Yılmaz</span>
+<span class="text-[12px] text-on-surface-variant/70">ayse.y@example.com</span>
+</div>
+</div>
+</td>
+<td class="px-stack-md py-stack-sm text-on-surface-variant">
+              12 Eki, 14:30
+            </td>
+<td class="px-stack-md py-stack-sm text-right font-label-md text-label-md">
+              1.250 TL
+              <div class="text-[11px] font-body-sm text-on-surface-variant font-normal">3 Ürün</div>
+</td>
+<td class="px-stack-md py-stack-sm">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">local_shipping</span>
+<span class="">Kapıda Ödeme</span>
+</div>
+</td>
+<td class="px-stack-md py-stack-sm">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-on-error-container"></span>
+                Yeni
+              </span>
+</td>
+<td class="px-stack-md py-stack-sm text-center">
+<button class="p-1.5 rounded-md text-on-surface-variant hover:text-primary hover:bg-primary-container/20 transition-all opacity-0 group-hover/row:opacity-100 focus:opacity-100" title="Detayları Görüntüle">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group/row">
+<td class="px-stack-md py-stack-sm">
+<label class="flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox">
+<div class="w-4 h-4 rounded border border-outline-variant peer-checked:bg-primary peer-checked:border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[14px] text-on-primary opacity-0 peer-checked:opacity-100" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+</label>
+</td>
+<td class="px-stack-md py-stack-sm font-label-md text-label-md">
+<a class="hover:text-primary transition-colors" href="#">#ORD-091</a>
+</td>
+<td class="px-stack-md py-stack-sm">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A portrait of a young man with glasses smiling softly, minimalist background, warm lighting, muted rose and cream tones, professional yet approachable." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBDdKHfe-Xk6p1otsO3hdhqJDreQnaq-WmatBaQDsIF6xoOlTah95swyur3ySE-vcHllgZRD1TfFTdnx7MPGDnNpP4ry1DTwfg42tc7O1173E2VGp1LBw06s5jKgmHbqDqrewCvQZ2pQTtpJI1eJqpv3pILXqz3osO_QdKW_vtWS39-PDTGaEPvX9LzVl0JltTHz4W6J5FmtDGKoOY4luKzzU4bjEZkb6FHJJQ_TnPVKAiBXUpSJJUqw">
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-on-surface">Can Kaya</span>
+<span class="text-[12px] text-on-surface-variant/70">can.kaya@example.com</span>
+</div>
+</div>
+</td>
+<td class="px-stack-md py-stack-sm text-on-surface-variant">
+              12 Eki, 11:15
+            </td>
+<td class="px-stack-md py-stack-sm text-right font-label-md text-label-md">
+              850 TL
+              <div class="text-[11px] font-body-sm text-on-surface-variant font-normal">2 Ürün</div>
+</td>
+<td class="px-stack-md py-stack-sm">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">credit_card</span>
+<span class="">Kredi Kartı</span>
+</div>
+</td>
+<td class="px-stack-md py-stack-sm">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">skillet</span>
+                Hazırlanıyor
+              </span>
+</td>
+<td class="px-stack-md py-stack-sm text-center">
+<button class="p-1.5 rounded-md text-on-surface-variant hover:text-primary hover:bg-primary-container/20 transition-all opacity-0 group-hover/row:opacity-100 focus:opacity-100" title="Detayları Görüntüle">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group/row">
+<td class="px-stack-md py-stack-sm">
+<label class="flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox">
+<div class="w-4 h-4 rounded border border-outline-variant peer-checked:bg-primary peer-checked:border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[14px] text-on-primary opacity-0 peer-checked:opacity-100" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+</label>
+</td>
+<td class="px-stack-md py-stack-sm font-label-md text-label-md">
+<a class="hover:text-primary transition-colors" href="#">#ORD-090</a>
+</td>
+<td class="px-stack-md py-stack-sm">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-title-lg text-[14px] font-bold">
+                  ZK
+                </div>
+<div class="flex flex-col">
+<span class="font-label-md text-on-surface">Zeynep Korkmaz</span>
+<span class="text-[12px] text-on-surface-variant/70">z.korkmaz@example.com</span>
+</div>
+</div>
+</td>
+<td class="px-stack-md py-stack-sm text-on-surface-variant">
+              11 Eki, 16:45
+            </td>
+<td class="px-stack-md py-stack-sm text-right font-label-md text-label-md">
+              3.450 TL
+              <div class="text-[11px] font-body-sm text-on-surface-variant font-normal">8 Ürün</div>
+</td>
+<td class="px-stack-md py-stack-sm">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">account_balance</span>
+<span class="">Havale/EFT</span>
+</div>
+</td>
+<td class="px-stack-md py-stack-sm">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">directions_bike</span>
+                Kargoda
+              </span>
+</td>
+<td class="px-stack-md py-stack-sm text-center">
+<button class="p-1.5 rounded-md text-on-surface-variant hover:text-primary hover:bg-primary-container/20 transition-all opacity-0 group-hover/row:opacity-100 focus:opacity-100" title="Detayları Görüntüle">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group/row bg-surface-container-lowest/50">
+<td class="px-stack-md py-stack-sm">
+<label class="flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox">
+<div class="w-4 h-4 rounded border border-outline-variant peer-checked:bg-primary peer-checked:border-primary flex items-center justify-center transition-colors">
+<span class="material-symbols-outlined text-[14px] text-on-primary opacity-0 peer-checked:opacity-100" style="font-variation-settings: 'wght' 700;">check</span>
+</div>
+</label>
+</td>
+<td class="px-stack-md py-stack-sm font-label-md text-label-md text-on-surface-variant/70">
+<a class="hover:text-primary transition-colors" href="#">#ORD-089</a>
+</td>
+<td class="px-stack-md py-stack-sm">
+<div class="flex items-center gap-3 opacity-80">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden">
+<img class="w-full h-full object-cover grayscale" data-alt="A smiling woman with dark curly hair, holding a cup of coffee, casual attire, warm bakery interior background, soft lighting, modern boutique aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsbXTfKCKJfihhZgF0J1LWyl6UvVMOOPGhMQe-DWBAmem8O-oND0GHJgk2TExkUH8X0tpkfEoiXYTGzdB1ZyQYqFA-XkVzNkZxbswFzD2-T7MGjSnaM1HaMOY2yYYYzXP0KampKUt0OkylwsiaMTq6zjj8ndxol_KcBecjgz8gEy7VpQA_QS3RNt5ZP5Wxowa0N2My-HBlgk0tdhE0weWL2cd185hBjwD84fSu9tLgAi5J1pFtzE8hmw">
+</div>
+<div class="flex flex-col">
+<span class="font-label-md text-on-surface">Merve Demir</span>
+<span class="text-[12px] text-on-surface-variant/70">m.demir@example.com</span>
+</div>
+</div>
+</td>
+<td class="px-stack-md py-stack-sm text-on-surface-variant/70">
+              10 Eki, 09:20
+            </td>
+<td class="px-stack-md py-stack-sm text-right font-label-md text-label-md text-on-surface-variant/70">
+              420 TL
+              <div class="text-[11px] font-body-sm text-on-surface-variant/50 font-normal">1 Ürün</div>
+</td>
+<td class="px-stack-md py-stack-sm">
+<div class="flex items-center gap-1.5 text-on-surface-variant/70">
+<span class="material-symbols-outlined text-[16px]">credit_card</span>
+<span class="">Kredi Kartı</span>
+</div>
+</td>
+<td class="px-stack-md py-stack-sm">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm opacity-80">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                Teslim Edildi
+              </span>
+</td>
+<td class="px-stack-md py-stack-sm text-center">
+<button class="p-1.5 rounded-md text-on-surface-variant hover:text-primary hover:bg-primary-container/20 transition-all opacity-0 group-hover/row:opacity-100 focus:opacity-100" title="Detayları Görüntüle">
+<span class="material-symbols-outlined text-[20px]">visibility</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="p-stack-md border-t border-outline-variant/20 flex flex-col sm:flex-row justify-between items-center gap-4 bg-surface-container-lowest">
+<div class="font-body-sm text-body-sm text-on-surface-variant">
+            Toplam <span class="font-label-md text-on-surface">124</span> siparişten <span class="font-label-md text-on-surface">1-4</span> arası gösteriliyor.
+        </div>
+<div class="flex items-center gap-2">
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface hover:bg-surface-container-highest text-on-surface-variant transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-primary text-on-primary font-label-md text-label-md transition-colors shadow-sm">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface hover:bg-surface-container-highest text-on-surface-variant font-label-md text-label-md transition-colors">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface hover:bg-surface-container-highest text-on-surface-variant font-label-md text-label-md transition-colors">3</button>
+<span class="text-on-surface-variant px-1">...</span>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface hover:bg-surface-container-highest text-on-surface-variant font-label-md text-label-md transition-colors">12</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-surface hover:bg-surface-container-highest text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple interaction for custom checkboxes
+  document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+      const row = this.closest('tr');
+      if(row && row.parentElement.tagName === 'TBODY') {
+          if(this.checked) {
+              row.classList.add('bg-primary/5');
+          } else {
+              row.classList.remove('bg-primary/5');
+          }
+      } else if (row && row.parentElement.tagName === 'THEAD') {
+          // Select all logic
+          const isChecked = this.checked;
+          const tbody = row.parentElement.nextElementSibling;
+          const rowCheckboxes = tbody.querySelectorAll('input[type="checkbox"]');
+          
+          rowCheckboxes.forEach(cb => {
+              cb.checked = isChecked;
+              const tr = cb.closest('tr');
+              if(isChecked) {
+                  tr.classList.add('bg-primary/5');
+              } else {
+                   tr.classList.remove('bg-primary/5');
+              }
+          });
+      }
+    });
+  });
+</script></main></div>
+
+</body></html>

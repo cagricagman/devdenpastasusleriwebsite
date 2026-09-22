@@ -1,0 +1,29 @@
+:root {
+  --wakko-primary: #9C3A50;
+  --wakko-primary-container: #BB5268;
+  --wakko-primary-fixed: #FFD9DE;
+  --wakko-primary-fixed-dim: #FFB2BD;
+  
+  --wakko-secondary: #7D5710;
+  --wakko-secondary-container: #FDC979;
+  --wakko-secondary-fixed: #FFDEAE;
+  
+  --wakko-tertiary: #346647;
+  --wakko-tertiary-container: #4D7F5E;
+  
+  --wakko-background: #FFF8F6;
+  --wakko-surface: #FFF8F6;
+  --wakko-surface-container-low: #FDF1EE;
+  --wakko-surface-container: #F7EBE8;
+  --wakko-surface-container-high: #F1E6E2;
+  --wakko-surface-container-highest: #ECE0DD;
+  
+  --wakko-text-primary: #201A19;
+  --wakko-text-secondary: #554244;
+  --wakko-outline: #887174;
+  --wakko-outline-variant: #DBC0C3;
+  --wakko-error: #BA1A1A;
+  
+  --wakko-font-heading: 'Playfair Display', Georgia, serif;
+  --wakko-font-body: 'Manrope', system-ui, sans-serif;
+}
